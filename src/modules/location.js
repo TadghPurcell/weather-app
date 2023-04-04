@@ -5,12 +5,12 @@ const updateLocation = async function (city) {
   );
 
   const weather = await response.json();
-
+  console.log(weather);
   // name/country
   location.name = weather.location.name;
   location.country = weather.location.country;
   // date/time
-  location.localTime = weather.location.localtime_epoch;
+  location.localTime = weather.location.localtime;
   // lat/lon
   location.lat = weather.location.lat;
   location.lon = weather.location.lon;
@@ -20,6 +20,8 @@ const updateLocation = async function (city) {
   location.feelsLikeC = weather.current.feelslike_c;
   location.feelsLikeF = weather.current.temp_f;
   // conditions
+  // location.condition = weather.current.condition.icon;
+
   location.condition = weather.current.condition.text;
   location.chanceOfRain =
     weather.forecast.forecastday[0].day.daily_chance_of_rain;

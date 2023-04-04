@@ -4,7 +4,7 @@ import updateDom from './modules/dom';
 
 const init = async function () {
   await updateLocation('dublin');
-  await updateDom();
+  updateDom();
 };
 init();
 
@@ -13,5 +13,5 @@ document.querySelector('button').addEventListener('click', async e => {
   const searchValue = document.querySelector('input').value;
 
   await updateLocation(searchValue);
-  await updateDom();
+  updateDom();
 });
