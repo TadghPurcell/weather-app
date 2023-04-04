@@ -14,6 +14,9 @@ module.exports = {
     static: './dist',
     hot: true,
   },
+  experiments: {
+    topLevelAwait: true,
+  },
   plugins: [new MiniCssExtractPlugin()],
   module: {
     rules: [
