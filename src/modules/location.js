@@ -21,7 +21,7 @@ const updateLocation = async function (city) {
   location.feelsLikeF = weather.current.temp_f;
   // conditions
   // location.condition = weather.current.condition.icon;
-
+  location.conditionImg = weather.current.condition.icon;
   location.condition = weather.current.condition.text;
   location.chanceOfRain =
     weather.forecast.forecastday[0].day.daily_chance_of_rain;

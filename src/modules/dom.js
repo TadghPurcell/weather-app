@@ -20,7 +20,6 @@ export default function updateDom() {
 
   const titleDate = document.querySelector('.title__sub');
   titleDate.textContent = Intl.DateTimeFormat('en-US', {
-    timeZoneName: 'short',
     hour: 'numeric',
     minute: 'numeric',
     day: '2-digit',
@@ -28,6 +27,14 @@ export default function updateDom() {
     year: 'numeric',
     weekday: 'long',
   }).format(new Date(location.localTime));
+
+  const mainImgContainer = document.querySelector('.content__main--img');
+  const img = document.createElement('img');
+  img.alt = location.condition;
+  img.src = location.conditionImg;
+  if (mainImgContainer.firstChild)
+    mainImgContainer.removeChild(mainImgContainer.firstChild);
+  mainImgContainer.appendChild(img);
 
   const wind = document.querySelector('.content__wind--sub');
   wind.textContent =
