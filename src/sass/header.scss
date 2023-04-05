@@ -1,6 +1,7 @@
 header {
   display: flex;
   padding: 20px;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   background-color: var(--primary-color);
@@ -50,11 +51,21 @@ form {
   display: flex;
   gap: 25px;
   align-items: center;
+  padding: 10px;
 }
 
 .active {
-  color: red;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: white;
+  color: black;
 }
+
+@keyframes moveCircle {
+  0% {
+  }
+}
+
 .btn-search {
   background-image: url('../img/magnify.svg');
   background-repeat: no-repeat;

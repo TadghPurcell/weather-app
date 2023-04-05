@@ -30,3 +30,15 @@ main {
   gap: 20px;
   text-align: center;
 }
+
+.forecast__container::-webkit-scrollbar {
+  height: 1vh;
+}
+
+.forecast__container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--primary-color);
+}
+.forecast__container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
