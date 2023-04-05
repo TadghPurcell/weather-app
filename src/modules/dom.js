@@ -138,6 +138,4 @@ export default function updateDom() {
   moon.textContent = location.moon;
 
   location.hourly.forEach(hour => appendHourlyForecast(hour));
-  //hourly forecast
-  console.log(location);
 }

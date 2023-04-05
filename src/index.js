@@ -18,15 +18,23 @@ const init = async function () {
 };
 init();
 
-document.querySelector('button').addEventListener('click', async e => {
+document.querySelector('body').addEventListener('click', function () {
+  const searchInput = document.querySelector('input');
+  searchInput.value = '';
+
+  searchInput.textContent = '';
+});
+document.querySelector('.btn-search').addEventListener('click', async e => {
   e.preventDefault();
-  const searchValue = document.querySelector('input').value;
+  const searchInput = document.querySelector('input');
 
   const loading = document.querySelector('.loading');
 
   loading.removeAttribute('style');
 
-  await updateLocation(searchValue);
+  await updateLocation(searchInput.value);
+  searchInput.value = '';
+  searchInput.textContent = '';
 
   loading.style.display = 'none';
 });
