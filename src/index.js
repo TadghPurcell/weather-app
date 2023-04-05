@@ -1,4 +1,4 @@
-import './style.scss';
+import './sass/style.scss';
 import { updateLocation } from './modules/location';
 import updateDom from './modules/dom';
 
