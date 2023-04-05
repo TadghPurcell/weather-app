@@ -1,5 +1,6 @@
 @import url('./header.scss');
 @import url('./main.scss');
+@import url('./base.scss');
 
 * {
   margin: 0;
@@ -79,4 +80,5 @@ h2,
 h3,
 h4 {
   color: #324b50;
+  font-family: 'Playfair Display', sans-serif;
 }
