@@ -30,3 +30,11 @@
     }
   }
 }
+
+.forecast__container {
+  overflow: auto;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  text-align: center;
+}

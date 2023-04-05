@@ -1,6 +1,7 @@
 import { location } from './location';
 
 const btnToggleTemp = document.querySelector('.toggle');
+const forecastContainer = document.querySelector('.forecast__container');
 
 const toggleTemp = function (e) {
   e.currentTarget.attributes.temp.value === 'celsius'
@@ -12,8 +13,39 @@ const toggleTemp = function (e) {
   updateDom();
 };
 
+const appendHourlyForecast = function (hour) {
+  const currentHour = hour[0].slice(11, 13);
+
+  const hourlyContainer = document.createElement('div');
+  hourlyContainer.classList.add(`forecast-hour--${currentHour}`);
+
+  const timeDisplay = document.createElement('h4');
+  timeDisplay.textContent = currentHour;
+
+  hourlyContainer.appendChild(timeDisplay);
+
+  const condition = document.createElement('img');
+  condition.alt = hour[1];
+  condition.src = hour[2];
+  condition.classList.add('hourly-condition');
+
+  hourlyContainer.appendChild(condition);
+
+  const currentTemp = document.createElement('p');
+  currentTemp.classList.add('hourly-temp');
+  currentTemp.textContent =
+    btnToggleTemp.attributes.temp.value === 'celsius'
+      ? `${hour[3]}`
+      : `${hour[4]}`;
+
+  hourlyContainer.appendChild(currentTemp);
+
+  forecastContainer.appendChild(hourlyContainer);
+};
+
 export default function updateDom() {
   btnToggleTemp.addEventListener('click', toggleTemp);
+  forecastContainer.innerHTML = '';
 
   const titleName = document.querySelector('.title__main');
   titleName.textContent = `${location.name}, ${location.country}`;
@@ -75,5 +107,7 @@ export default function updateDom() {
   const moon = document.querySelector('.content__moon--sub');
   moon.textContent = location.moon;
 
+  location.hourly.forEach(hour => appendHourlyForecast(hour));
+  //hourly forecast
   console.log(location);
 }

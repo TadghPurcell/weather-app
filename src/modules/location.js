@@ -54,6 +54,18 @@ const updateLocation = async function (city) {
   // visibility
   location.visibilityKM = weather.current.vis_km;
   location.visibilityMiles = weather.current.vis_miles;
+
+  // hourly forecast
+  location.hourly = [];
+  for (let i = 0; i < 24; i++) {
+    location.hourly.push([
+      weather.forecast.forecastday[0].hour[i].time,
+      weather.forecast.forecastday[0].hour[i].condition.text,
+      weather.forecast.forecastday[0].hour[i].condition.icon,
+      weather.forecast.forecastday[0].hour[i].temp_c,
+      weather.forecast.forecastday[0].hour[i].temp_f,
+    ]);
+  }
 };
 
 export { location, updateLocation };
