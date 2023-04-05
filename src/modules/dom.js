@@ -68,6 +68,34 @@ export default function updateDom() {
     mainImgContainer.removeChild(mainImgContainer.firstChild);
   mainImgContainer.appendChild(img);
 
+  const mainCondition = document.querySelector('.content__main--condition');
+  mainCondition.textContent = `${location.condition}, ${
+    btnToggleTemp.attributes.temp.value === 'celsius'
+      ? `${location.tempC}`
+      : `${location.tempF}`
+  }`;
+
+  const mainFeelsLike = document.querySelector('.content__main--feel');
+  mainFeelsLike.textContent = `Feels like: ${
+    btnToggleTemp.attributes.temp.value === 'celsius'
+      ? `${location.feelsLikeC}`
+      : `${location.feelsLikeF}`
+  }`;
+
+  const mainHighTemp = document.querySelector('.content__main--high');
+  mainHighTemp.textContent = `H: ${
+    btnToggleTemp.attributes.temp.value === 'celsius'
+      ? `${location.maxTempC}`
+      : `${location.maxTempF}`
+  }`;
+
+  const mainLowTemp = document.querySelector('.content__main--low');
+  mainLowTemp.textContent = `L: ${
+    btnToggleTemp.attributes.temp.value === 'celsius'
+      ? `${location.minTempC}`
+      : `${location.minTempF}`
+  }`;
+
   const wind = document.querySelector('.content__wind--sub');
   wind.textContent =
     btnToggleTemp.attributes.temp.value === 'celsius'
