@@ -5,11 +5,13 @@ const forecastContainer = document.querySelector('.forecast__container');
 
 const toggleTemp = function (e) {
   e.currentTarget.attributes.temp.value === 'celsius'
-    ? (e.currentTarget.textContent = 'Fahrenheit')
-    : (e.currentTarget.textContent = 'Celsius');
-  e.currentTarget.attributes.temp.value === 'celsius'
     ? (e.currentTarget.attributes.temp.value = 'fahrenheit')
     : (e.currentTarget.attributes.temp.value = 'celsius');
+
+  const celsius = document.querySelector('.toggle-celsius');
+  celsius.classList.toggle('active');
+  const fahrenheit = document.querySelector('.toggle-fahrenheit');
+  fahrenheit.classList.toggle('active');
   updateDom();
 };
 
@@ -71,29 +73,29 @@ export default function updateDom() {
   const mainCondition = document.querySelector('.content__main--condition');
   mainCondition.textContent = `${location.condition}, ${
     btnToggleTemp.attributes.temp.value === 'celsius'
-      ? `${location.tempC}`
-      : `${location.tempF}`
+      ? `${location.tempC}°C`
+      : `${location.tempF}°F`
   }`;
 
   const mainFeelsLike = document.querySelector('.content__main--feel');
   mainFeelsLike.textContent = `Feels like: ${
     btnToggleTemp.attributes.temp.value === 'celsius'
-      ? `${location.feelsLikeC}`
-      : `${location.feelsLikeF}`
+      ? `${location.feelsLikeC}°C`
+      : `${location.feelsLikeF}°F`
   }`;
 
   const mainHighTemp = document.querySelector('.content__main--high');
   mainHighTemp.textContent = `H: ${
     btnToggleTemp.attributes.temp.value === 'celsius'
-      ? `${location.maxTempC}`
-      : `${location.maxTempF}`
+      ? `${location.maxTempC}°C`
+      : `${location.maxTempF}°F`
   }`;
 
   const mainLowTemp = document.querySelector('.content__main--low');
   mainLowTemp.textContent = `L: ${
     btnToggleTemp.attributes.temp.value === 'celsius'
-      ? `${location.minTempC}`
-      : `${location.minTempF}`
+      ? `${location.minTempC}°C`
+      : `${location.minTempF}°F`
   }`;
 
   const wind = document.querySelector('.content__wind--sub');
@@ -105,7 +107,7 @@ export default function updateDom() {
   const windArrow = document.querySelector('.content__wind--arrow');
   windArrow.setAttribute(
     'style',
-    `transform: translate(-50%, -20%) rotate(${location.windDegree}deg);`
+    `transform: rotate(${location.windDegree}deg);`
   );
 
   const humidity = document.querySelector('.content__humidity--sub');

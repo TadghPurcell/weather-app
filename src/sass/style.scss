@@ -8,11 +8,13 @@
 
 :root {
   --primary-color: #007e8e;
+  --secondary-color: #def4f6;
 }
 
 body {
   background-color: #f9feff;
   color: #434d4e;
+  font-size: 16px;
   line-height: 2rem;
 }
 
@@ -62,14 +64,12 @@ body {
     }
     &--arrow {
       background-image: url(../img/arrow-up-thin.svg);
-      padding-right: 10px;
       position: absolute;
       background-repeat: no-repeat;
       height: 30px;
       width: 30px;
       top: 0;
-      left: 0;
-      transform: translate(-50%, -20%);
+      left: -25%;
     }
   }
 }

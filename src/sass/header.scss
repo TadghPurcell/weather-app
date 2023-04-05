@@ -12,3 +12,56 @@ header {
   color: white;
   text-shadow: 0 2px 5px rgb(50, 75, 80, 0.4);
 }
+
+button,
+input {
+  padding: 4px 20px;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 5px rgb(50, 75, 80, 0.4);
+}
+
+input {
+  background-color: #def4f6;
+}
+
+button {
+  background-color: #004b55;
+  color: white;
+  box-shadow: 0 2px 5px rgb(50, 75, 80, 0.4);
+  font-size: 1.5rem;
+}
+
+form {
+  display: flex;
+  background-color: #004b55;
+  border-radius: 10px;
+  padding: 8px 12px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 2px 5px rgb(50, 75, 80, 0.4);
+}
+
+.toggle {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.active {
+  color: red;
+}
+.btn-search {
+  background-image: url('../img/magnify.svg');
+  background-repeat: no-repeat;
+  height: 25px;
+  width: 25px;
+  padding: 0;
+  background-color: #004b55;
+
+  border: none;
+}
