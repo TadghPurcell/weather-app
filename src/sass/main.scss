@@ -16,7 +16,11 @@ main {
 
 .forecast {
   margin-bottom: 50px;
-  width: 100%;
+  width: 60vw;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 50px;
+  box-shadow: 0 1px 5px rgb(50, 75, 80, 0.15);
 }
 
 .forecast__header {
@@ -29,6 +33,10 @@ main {
   display: flex;
   gap: 20px;
   text-align: center;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  background-color: var(--secondary-color);
+  box-shadow: 0 1px 5px rgb(50, 75, 80, 0.15);
 }
 
 .forecast__container::-webkit-scrollbar {
